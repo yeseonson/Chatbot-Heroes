@@ -29,6 +29,8 @@ def exchange_NP(target):
 
     return keyword[0][0]
 
+# 종결어미가 아닌 문장 중간의 말투가 변경되는 문제 해결을 위함
+# 종결어미의 POS가 JX인 경우, EC가 맨 뒤에 위치하지 않는 경우를 제외
 def non_JX(target):
     target = target.strip('.')
     ko_sp = komoran_token_pos_flat_fn(target)[::-1]
@@ -43,6 +45,7 @@ def non_JX(target):
                 target = target[::-1]
     return target
 
+# 종결어미(EF, EC)만 저장
 def make_special_word(target):
     ko_sp = komoran_token_pos_flat_fn(target)[::-1]
     keyword = []
@@ -69,6 +72,7 @@ def make_special_word(target):
 
     return keyword[0]
 
+# ~능 말투를 만들어주기 위한 함수
 def make_neung(target):
     target = target.rstrip(' ')
     target = target.rstrip(',')
@@ -516,6 +520,7 @@ def make_neung(target):
 
     return target
 
+# 반말 딕셔너리
 def get_rough_dic():
     my_exword = {
         '돌아와요': '돌아와',
