@@ -421,7 +421,7 @@ def make_neung(target):
         elif hgtk_text.find('ㅕᴥㅇㅛᴥ') > 0:
             hgtk_text = hgtk_text.replace(hgtk_text[hgtk_text.find('ㅕᴥㅇㅛᴥ'):], 'ㅣㄴᴥㄷㅏᴥㄴㅡㅇᴥ')
         else:
-            hgtk_text = hgtk_text.replace(hgtk_text[hgtk_text.find('ㅇㅓᴥㅇㅛᴥ'):], 'ㄷㅏᴥㄴㅡㅇᴥ')
+            hgtk_text = hgtk_text.replace(hgtk_text[hgtk_text.find('ㅓᴥㅇㅛᴥ'):], 'ㅡᴥㄷㅏᴥㄴㅡㅇᴥ')
         target = hgtk.text.compose(hgtk_text)
 
     elif make_special_word(target) == '에요':
